@@ -4,7 +4,7 @@ class ProductCategoryRow extends Component {
     render() {
         return (
             <tr>
-                <td colSpan="2">Sporting Gootd</td>
+                <td colSpan="2">{this.props.category}</td>
             </tr>
         );
     }
