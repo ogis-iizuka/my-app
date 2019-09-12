@@ -3,10 +3,6 @@ import React, { Component } from 'react'
 class SearchBar extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            searchProductName: "",
-            onlyShowProductsInStock: false
-        }
 
         //This束縛。TypeScriptだと不要になるらしい。
         this.handleSearchProductNameChanged = this.handleSearchProductNameChanged.bind(this);
@@ -15,24 +11,18 @@ class SearchBar extends Component {
     }
 
     handleSearchProductNameChanged(event) {
-        this.setState({
-            searchProductName: event.target.value
-        });
+        this.props.handleSearchProductNameChanged(event.target.value);
     }
 
     handleOnlyShowProductsInStockInputChanged(event) {
-        //FIXME ({としないとエラーになる理由が良く分かっていない。
-        this.setState((state,props)=>({
-            //チェックボックスの変更はvalueでは取れないので、クリックされるたびに状態を逆の状態にトグルする。
-            onlyShowProductsInStock: !state.onlyShowProductsInStock
-        }));
+        this.props.handleOnlyShowProductsInStockInputChanged();
     }
 
     render() {
         return (
             <div>
-                <input type="text" maxLength="20" placeholder="Search..." value={this.state.searchProductName} onChange={this.handleSearchProductNameChanged} /><br />
-                <input type="checkbox" checked={this.state.onlyShowProductsInStock} onChange={this.handleOnlyShowProductsInStockInputChanged}/>
+                <input type="text" maxLength="20" placeholder="Search..." value={this.props.searchProductName} onChange={this.handleSearchProductNameChanged} /><br />
+                <input type="checkbox" checked={this.props.onlyShowProductsInStock} onChange={this.handleOnlyShowProductsInStockInputChanged}/>
                 Only show products in stock
             </div>
         );
