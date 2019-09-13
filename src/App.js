@@ -14,6 +14,7 @@ function App() {
  * 商品データを返却する。
  * @returns 商品データ
  */
+//
 function produceProductData(){
   return [
     {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
