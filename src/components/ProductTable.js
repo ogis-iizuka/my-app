@@ -25,8 +25,8 @@ class ProductTable extends Component {
 
         //1.商品カテゴリのリストを取得する。（消費一覧から重複のないカテゴリのリストを生成する）
         let categories = 
-            products.map(p => p.category). //商品カテゴリ名に変換
-            filter((elem, index, array) => { return array.indexOf(elem) === index }); //商品カテゴリ名の重複を排除する
+            products.map(p => p.category) //商品カテゴリ名に変換
+            .filter((elem, index, array) => { return array.indexOf(elem) === index }); //商品カテゴリ名の重複を排除する
 
         //2.商品カテゴリごとの商品リストを生成する。
         let element = [];
@@ -34,9 +34,9 @@ class ProductTable extends Component {
             element.push(<ProductCategoryRow category={category}/>);
             //商品を商品カテゴリで絞り込み、絞り込んだ商品ごとに、ProductRowを生成。
             products.filter((product) => {return product.category === category}).forEach(product =>{
-                element.push(<ProductRow product={product}/>)
+                element.push(<ProductRow product={product} key={product.name}/>)
             })
-        });
+        });name
         return (
             <div>
                 <table>
