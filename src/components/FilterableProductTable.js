@@ -66,9 +66,9 @@ class FilterableProductTable extends Component {
     render() {
         //消費をフィルタリングする。
         let filteredProducts =
-            this.props.products.
-                filter(this.filterProductsInStock()). //在庫がある商品のみ絞り込みを行う場合は、該当の絞り込みを実施
-                filter(this.filterProductsName()); //商品名で絞り込みを実施
+            this.props.products
+                .filter(this.filterProductsInStock()) //在庫がある商品のみ絞り込みを行う場合は、該当の絞り込みを実施
+                .filter(this.filterProductsName()); //商品名で絞り込みを実施
 
         return (
             <div>
