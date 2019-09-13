@@ -36,7 +36,7 @@ class ProductTable extends Component {
             products.filter((product) => {return product.category === category}).forEach(product =>{
                 element.push(<ProductRow product={product} key={product.name}/>)
             })
-        });name
+        });
         return (
             <div>
                 <table>
