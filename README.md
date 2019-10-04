@@ -1,10 +1,10 @@
+マージテスト
 ## reactの勉強
 
 公式ドキュメントの以下のサンプルアプリを正解を見ずに実装（設計指針は完全に参考にした）
 
 https://ja.reactjs.org/docs/thinking-in-react.html
 
-----
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

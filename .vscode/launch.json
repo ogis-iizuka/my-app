@@ -6,12 +6,16 @@
     "configurations": [
         {
             "type": "chrome",
-            "request": "launch",
+            // "request": "launch",
+            "request": "attach",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}",
+            "port": 9222,
+            // "trace": true,
             "sourceMapPathOverrides": {
-                "webpack:///src/*": "${webRoot}/*"
+                "/c/home/iizuka/telmee/myapp/src/*": "${workspaceFolder}/src/*"
+                // "webpack:///src/*": "${webRoot}/*"
             }            
         }
     ]
